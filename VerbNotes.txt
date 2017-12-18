@@ -1,0 +1,152 @@
+Demberg et al. https://www.aclweb.org/anthology/D/D12/D12-1033.pdf
+Syntactic surprisal affects spoken word duration in conversational contexts
+
+syntactic surprisal estimates are better predictors of
+word durations than a simpler version of sur-
+prisal based on trigram probabilities
+
+Flo-
+rian  Jaeger  (2010)  shows  the  same  result  of  in-
+creased reduction when the complementizer is more
+predictable according to information density calcu-
+lated in terms of the main verb’s subcategorization
+frequency.
+
+
+---
+Altmann & Kamide
+http://www.sciencedirect.com/science/article/pii/S0010027799000591
+
+Visual world paradigm.
+
+information at the verb can be used to restrict the domain within the context to which subsequent reference will be made by the (as yet unencountered) post-verbal grammatical object.
+
+---
+Kamide, Altmann & Haywood
+https://www.researchgate.net/profile/Gerry_Altmann/publication/257255441_Corrigendum_to_The_time-course_of_prediction_in_incremental_sentence_processing_Evidence_from_anticipatory_eye_movements_Journal_of_Memory_and_Language_49_2003_133-156/links/02e7e52713d8f5b9d1000000.pdf
+
+(a) verb-based information is not
+limited to anticipating the immediately following (grammatical) object, but can also anticipate later occurring objects
+(e.g., Goals), (b) in combination with information conveyed by the verb, a pre-verbal argument (Agent) can constrain
+the anticipation of a subsequent Theme, and (c) in a head-final construction such as that typically found in Japanese,
+both syntactic and semantic constraints extracted from pre-verbal arguments can enable the anticipation, in effect, of a
+further forthcoming argument in the absence of their head (the verb). We suggest that such processing is the hallmark of
+an incremental processor that is able to draw on different sources of information (some non-linguistic) at the earliest
+possible opportunity to establish the fullest possible interpretation of the input at each moment in time.
+
+
+----
+
+Luke Maurits - V initial has better uniform information, but what does that say about importance of verb?
+
+
+
+---
+From Kamide Linguistic compass:
+http://www.cogsci.ucsd.edu/~ajyu/Teaching/Cogs1_wi09/Lecture17/levy_reading.pdf
+
+Kamide,  Yuki,  Gerry  T.  M.  Altmann,  and  Sarah  L.  Haywood.  2003.  The  time-course  of prediction  in  incremental  sentence  processing:  Evidence  from  anticipatory  eye-movements. Journal of Memory and Language 49.133 –59.
+
+ MacRae  et al.  (2005)  make  an  explicit  link
+between  their  findings  and  predictive  processes:  they  note  that  ‘(their)
+results  support  the  hypothesis  that  during  sentence  comprehension,  the
+processing  of  nouns  leads  to  anticipatory  semantic  computation  of  the
+verbs  (or  semantic  class  of  verbs)  with  which  they  may  combine  later  in
+the  sentence’  (p.  1181)
+
+Altmann (1999) "prediction at verb" 
+- Altmann (1999) discussed a possible interpretation of  the  results.  At  the  verb  (e.g.  ‘injured’),  semantic  constraints  for  its permissible objects are activated pred
+ictively and mapped with the existing discourse structure. He notes that ‘one interpretation of these data is that the  processor  projects,  at  the  verb,  the  upcoming  postverbal  referring expression and attempts to establish, given the thematic criteria (selectional restrictions) imposed by the verb, whether there are any discourse antecedents with  which  it  could  be  coreferential’  (p.  131)
+
+Tested by Altmann and Kamide (1999), in visual world paradigm,  found good.  "between the onset of the verb and the onset of the critical noun  the  proportion  of  the  trials  with  a  saccade  towards  the  target  object was higher in the eat condition (54%) than in the move condition"
+
+Kamide et al. (2003): this suggests that  the  constraints  from  the  subject  and  verb  of  the  sentence  were combined as soon as the verb appeared and used to anticipate the most appropriate  object  to  follow. However,  interestingly,  the  verb  objects  also received  more  looks  than  the  other  two  types  of  objects  (agent  and irrelevant  objects)  during  this  region,  which  suggests  that  meeting  the verb requirements manifests advantages over meeting the agent requirements or no requirement, but the manifestation takes place later than meeting both  the  verb  and  agent  requirements
+
+
+* Several studies using the visual world eye-tracking paradigm showed that the listener integrates constraints on the possible or likely upcoming elements when the verb appears (Altmann, 1999; Kamide et al. XXX 2003; Altmann, 2004; see Kamide SUMMARY XXXX), though this is not always the case depending on the construction and the grammar of the language (see experiment 3 of Kamide et al. XXX 2003; Knoeferle et al., 2005 XXXX).
+
+* Corpus analyses have been used to test how different constituents predict the upcoming words (they convey more information therefore easing subsequent comprehension effort), but results are not consistent.  An analysis of written language suggests that verbs carry more more semantic information to the listener on average than nouns (measure from Piantadosi et al. XXXX as calculated in Roberts, Torriera & Levinson, XXXX), but a study of child-directed speech found that objects convey more information than subjects or verbs (Maurits et al. XXXX, and see discussion).
+
+ 
+
+ Altmann  (2004)  conducted  a
+visual-world  experiment  using  a  similar  set  of  stimuli  as  Altmann  and
+Kamide  (1999)  with  a  different  presentation  procedure:  the  picture  was
+first  presented  without  the  sentence,  then  replaced  by  a  white  display
+accompanied by the auditory sentence, somehow emulating the procedure
+of  reading  narratives  like  (16)  (
+blank  screen
+  technique).  Altmann  (2004)
+found  that  the  proportion  of  saccades  to  the  target  objects  (cake)  was
+significantly higher in the ‘eat’ condition than in the ‘move’ condition as early
+as  the  verb,  providing  the  same  pattern  as  Altmann  and  Kamide’s  (1999)
+original  experiment.  Therefore,  the  replication  suggests  that  anticipatory
+eye movements could occur even when a set of candidates for the ‘predictee’
+(e.g. cake) is not present when the ‘predictor’ (e.g. ‘
+eat
+’)  appears
+
+
+Boland  (2005),  therefore,  indicated  that  the  linguistic  argument  status
+differentiates arguments from adjuncts 
+qualitatively in anticipatory processing
+(i.e.  arguments  are  more  likely  to  be  anticipated  than  adjuncts).
+
+
+Thus,  these  studies  show  that  the  human  language  processor  is  able  to
+integrate verb-based lexical information and visual information, and then
+use  the  information  to  anticipate  what  will  come  next  in  the  speech
+stream.  However,  in  theory,  linguist
+ic  information  sources  for  prediction
+do not have to be restricted to verbs. Experiment 3 in the aforementioned
+Kamide  et al.’s  (2003)  study  investigated  whether  an  argument  can  be
+anticipated by a sequence of other case-marked noun phrases prior to the
+verb in a head-final language, Japanese. ... Thus, this Japanese experiment suggested that the sentence processor starts building  the  sentence  structure  prior  to  the  verb  (inconsistent  with  the head-driving  parsing  account;  for  example,  Pritchett  1991),  and  achieves anticipation  of  forthcoming  arguments  if  the  pre-verbal  information, especially case-marking information combined with real-world knowledge, is sufficiently constraining.
+
+Though Knoeferle et al. (2005) do not find anticipation at the verb.
+
+
+
+
+
+
+
+* However, the uniform information density accounts were motivated by the rational strategy for successfully transmitting a single utterance in noisy conditions (studies like Maurits et al. XXXX also assume that all words are the same length and that previous utterances do not constrain the current one).  We argue that real time conversation involves simultaneous encoding and decoding, and so the ideal information profile may not be uniform, but one of the skewed distributions discussed above.  Furthermore, the uniform information accounts focus on the ease of decoding rather than the ease of planning.  However, in general the findings may be compatible with our account.  For example, according to the results in Maurits et al. XXXX, SVO order conveys the most uniform information rate.  However, considering the three SO orders, the last element in the utterance contains more information (and therefore requires more attention) as the verb moves away from the crunch zone at the end of the turn.  That is, SOV order is the best profile for a turn-taking listener, since they are already able to predict the verb from the subject and the object, and are therefore able to dedicate more resources to planning in the crunch zone.  This is compatible with our general findings that turn taking imposes a pressure to push the verb further back in the sentence.
+
+
+
+
+
+
+*  Reali & Christiansen, 2009: Neural networks produce SOV order when there is a selection pressure for predictability.
+
+
+---------
+
+Topic and comment
+
+Van  Valin  &  LaPolla  (1997)  note  that  predicate  
+focus is the universally unmarked type of focus structure. In this focus type, there is a 
+topic, which is contained in the presupposition, and the constituents in focus are the ones 
+that  give  a  comment  on  it.  Van  Valin  (2005)  states  that  this  topic-comment  pragmatic  
+dichotomy corresponds to the Subject-predicate syntactic dichotomy, where the Subject 
+is a topic and the predicate is the comment. 
+
+Van  Valin,  R.  D.  Jr.,  and  Randy  J.  LaPolla.  1997.  
+Syntax:  Structure,  Meaning,  and  
+Function
+. Cambridge and New York: Cambridge University Press. 
+
+Van  Valin,  R.  D.  Jr.  2005.  
+Exploring  the  Syntax-Semantics  Interface
+.  Cambridge  and  
+New York: Cambridge University Press. 
+
+-----
+
+Other theories of word order
+
+Krupa (1982), sentence depth, salience and 
+Krupa, V. (1982). Syntactic Typology and Linearization. Language, 58(3), 639–645.
+Tomlin (1986) - syntactic/semantic
+Tomlin, R. S. (1986). Basic word order: functional principles. Croom Helm.

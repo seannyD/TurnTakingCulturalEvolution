@@ -1,0 +1,62 @@
+Tanaka (2000)
+
+p.1
+
+ This delayed projectability in Japanese, however, is to a large extent compen- sated by a potentially greater degree of certitude with which participants can localize turn endings through devices that mark possible transition-relevance places.
+
+p.3
+On the other hand, much less is known about the implications of cross-linguistic variations in grammar on turn-taking operations in other languages such as Japanese. The Japanese linguistics literature suggests numerous differences between the grammatical structures of English and Japanese (e.g., Kuno, 1973; Martin, 1975; Shibatani, 1990). The dis- crepant standard word order of the two languages is a case in point, as is the striking contrast in the use of prepositions in English as opposed to postpositional particles in Japanese. Surely, the availability of such diver- gent syntactic resources can be expected to have profound ramifications on how participants go about building turns and where in the course of a turn a possible end of a turn can be anticipated.
+In an illuminating study, Fox et al. (1996) noted potential connections between turn-taking and the different syntactic practices between the two languages, which already suggests many ideas broadly consonant with the findings of this article. Whereas English syntax makes “early projection” relatively straightforward, the authors note that “the beginnings of TCUs [turn-constructional units] in Japanese do not tend to have elements that syntactically project the possible organization of what is to follow,” there- by impeding “early projection strategies.” Instead, participants produce utterances “in small constituents,” constructing them “bit by bit.” As a consequence, recipients tend to “wait and see” the development of an utterance “until they hear the last few syllables of the turn (which often contain such ‘ending signals’ as final particles, or special completion-rel- evant verb forms) before starting their own utterance."
+
+p. 18
+The pervasive use of utterance-final elements, which have no clear equivalents in English,4 is perhaps one of the greatest contrasts between Japanese and English conversational structures. In view of the normative orientation to the potentially indefinite step-by-step transformability of grammatical units under construction, utterance-final elements can play a pivotal role for indicating that no further transformations are in store.
+
+p.29
+turns in Japanese do not necessarily pro- ject from their beginnings what their ultimate shape and type will be. The features of projectability in languages such as English with a standard Subject-Verb-Object word order and prepositional syntactic structure, therefore, may not necessarily be transferable entirely onto postpositional and predicate-final languages such as Japanese.
+
+###
+From steve:  'impossible langauges'
+(4) Kalaall-it nuna-a-liar-poq [from Sadock 1980; 314] 
+
+ Greenlander-pl. land-3pl.-go-intr.indic. 
+
+ He went to Greenland (i.e. to the Greenlanders’ country) (Kalaallisut)
+
+(1) a Wa’-ke-nákt-a-hnínu-’ 
+
+ Fact-1sS-bed-∅-buy-PUNC1
+
+ I bought the/a bed. (Mohawk, Baker 1996 p. 279) 
+
+ b. qukiuti-taaq-tunga 
+
+ rifle-get-intr.part.1s. 
+
+ I got a rifle. (Inuktitut - Mittimatalingmiutut
+
+ 
+
+2
+#########################
+# From Lestrade and talk at Radboud in May:
+
+Processing crucial information: perhaps speakers just put more effort into processing crucial stuff, so that things even out over the sentence.
+	Response: But this is still caused by the constraints of turn taking
+
+Verb is the crucial information:
+	Aphasics find verbs difficult to produce (especially marked)
+
+Pro-drop:
+	Predictions from Switchboard: Look at gaps after sentences with only a verb as opposed to sentences with only a noun.
+
+Jakob: African languages: Intransitive sentences often include object anyway.  This may be explained by .
+
+Lesage: Similar hypothesis? :OCP hypothesis: no heavy syllables in a  row
+	If question particles are buffers, why isn’t S in SVO a buffer?
+		Response: buffer is continuous - the longer you have before the verb, the better
+	In simulations with question particles, does the relative frequency of V-, -V- and -V change?
+
+
+######
+Word Order in Sentence Processing: An Experimental Study of Verb Placement in German
+http://link.springer.com/article/10.1023%2FA%3A1015588012457

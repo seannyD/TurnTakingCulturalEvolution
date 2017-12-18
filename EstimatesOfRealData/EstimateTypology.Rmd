@@ -1,0 +1,131 @@
+---
+title: "Estimating the typological distribution of word order and sentence particles"
+output: pdf_document
+---
+
+Load libraries.
+
+```{r}
+library(lme4)
+```
+
+Load data.
+
+```{r}
+
+d.wals = read.csv("wals_data/language.csv",na.string='')
+```
+
+Make a variable which marks the position of the verb.
+
+```{r}
+
+OrderSOV = as.character(d.wals$X81A.Order.of.Subject..Object.and.Verb)
+
+d.wals$VerbPos = NA
+d.wals[OrderSOV %in% c('1 SOV','6 OSV'),]$VerbPos = 3
+d.wals[OrderSOV %in% c('2 SVO','5 OVS'),]$VerbPos = 2
+d.wals[OrderSOV %in% c('3 VSO','4 VOS'),]$VerbPos = 1
+```
+
+Make a centered variable from th everb position.
+
+```{r}
+d.wals$VerbPos.norm = d.wals$VerbPos/3
+```
+
+
+Make a variable for the position of particles.  Code only initial, final and none, removing 'second position' and 'other position.
+
+```{r}
+# make a shortcut for position of polar question particles
+QP = as.character(d.wals$X92A.Position.of.Polar.Question.Particles)
+
+# find non-NA datapoints
+QPNA = !is.na(d.wals$X92A.Position.of.Polar.Question.Particles)
+
+
+d.wals$QP.pos3 = NA
+d.wals$QP.pos3[QPNA & QP=='1 Initial'] = "3 Initial"
+d.wals$QP.pos3[QPNA & QP=='3 Second position'] = NA
+d.wals$QP.pos3[QPNA & QP=='4 Other position'] = NA
+d.wals$QP.pos3[QPNA & QP=='2 Final'] = "2 Final"
+d.wals$QP.pos3[QP=='6 No question particle'] = "1 None"
+```
+
+Show the raw data.  This is just the number of languages with each type, uncorrected for historical relations. 
+
+```{r}
+table(d.wals$QP.pos3, d.wals$VerbPos)
+```
+
+
+Plot the raw data.  
+
+```{r}
+# 
+tx4 = table(d.wals$QP.pos3,d.wals$VerbPos)
+barplot(
+  t(t(tx4)/colSums(tx4)),
+  names.arg=c("V-","-V-","-V"),
+  col=rev(c("light green","dark green",'light blue')))
+text(0.7,0.8,"Initial\nParticle")
+text(0.7,0.5,"Final\nParticle",col='white')
+text(0.7,0.15,"No\nParticle")
+```
+
+
+# Mixed effects models
+
+Make three mixed effects models, each predicting the probability of a verb being in a given position by the position of the polar question marker.  There is a random effect for families, which adds a basic control for historical relatedness.
+
+```{r}
+
+lmVSO = glmer(VerbPos==1~QP.pos3+(1|family),data=d.wals,family=binomial(link=logit))
+lmSVO = glmer(VerbPos==2~QP.pos3+(1|family),data=d.wals,family=binomial(link=logit))
+lmSOV = glmer(VerbPos==3~QP.pos3+(1|family),data=d.wals,family=binomial(link=logit))
+```
+
+Use the fixed effects of the models to esimate the proportion of each question particle type for each basic word order type.  This estimate should take into account the historical relations between families.
+
+```{r}
+
+x = c(exp(fixef(lmVSO)[1]),exp(sum(fixef(lmVSO)[1:2])),exp(sum(fixef(lmVSO)[c(1,3)])))
+vsoP = x/sum(x)
+x = c(exp(fixef(lmSVO)[1]),exp(sum(fixef(lmSVO)[1:2])),exp(sum(fixef(lmSVO)[c(1,3)])))
+svoP = x/sum(x)
+x = c(exp(fixef(lmSOV)[1]),exp(sum(fixef(lmSOV)[1:2])),exp(sum(fixef(lmSOV)[c(1,3)])))
+sovP = x/sum(x)
+```
+
+Show the model estimates.
+
+```{r}
+estX = rbind(vsoP,svoP,sovP)
+estX = estX/rowSums(estX)
+colnames(estX) = c("None","Final","Initial")
+estX
+```
+
+
+
+Plot the model estimates.  They reflect the raw estimates well.
+
+```{r}
+barplot(
+  t(estX),
+  beside=F,
+  names.arg=c("V-",'-V-','-V'),
+  col=rev(c("light green",'dark green','light blue')))
+text(0.7,0.7,"Initial\nParticle")
+text(0.7,0.26,"Final\nParticle",col='white')
+text(0.7,0.08,"No\nParticle")
+```
+
+Save the results
+
+```{r}
+estX2 = t(estX)
+rownames(estX2) = c('No Partcile','Final Particle','Initial Particle')
+save(estX2,file='QParticleRealDataEstiamtes.rDat')
+```

@@ -1,0 +1,222 @@
+---
+title: "Testing the relationship between verb position and position of verbal affixes"
+output: pdf_document
+---
+
+# Introduction
+
+Thompson (1998) points out that interrogative structures make turn transition relevant: a question demands an answer.  Thompson argues that, in order to be effective, interrogatives should generally apply to prosodic units, and therefore appear at turn boundaries, rather than in the middle of turns.  If interrogatives are morphologically bound to the verb, this constraint leads to a specific prediction: languages that place the verb at the end of a sentence should have interrogative suffixes (so that the interrogative appears after the verb at the boundary), while languages with verbs at the beginning should have interrogative prefixes.  In fact, this should bias the language towards suffixing or prefixing in general.  We tested this statistically by looking at the probability of suffixes for different word orders in a sample of the world’s languages, controlling for historical influence. Indeed, we find that suffixes are much more likely than prefixes in verb-final languages (460 languages taken from Dryer, 2013b and Dryer, 2013a, mixed effects model controlling for language family, log likelihood difference = 12.27, 2 = 24.5, df = 2, p < 0.0001, see below).
+
+
+# Load libraries
+
+```{r}
+library(lme4)
+```
+
+# Load data
+
+```{r}
+
+d.wals = read.csv("wals_data/language.csv",na.string='')
+```
+
+Make a variable which marks the position of the verb.
+
+```{r}
+
+OrderSOV = as.character(d.wals$X81A.Order.of.Subject..Object.and.Verb)
+
+d.wals$VerbPos = NA
+d.wals[OrderSOV %in% c('1 SOV','6 OSV'),]$VerbPos = 3
+d.wals[OrderSOV %in% c('2 SVO','5 OVS'),]$VerbPos = 2
+d.wals[OrderSOV %in% c('3 VSO','4 VOS'),]$VerbPos = 1
+
+# Variable for whether language is verb-initial
+d.wals$VerbInitial = d.wals$VerbPos==1
+
+```
+
+Make a variable that distinguishes between suffixing and prefixing inflectional morphology.
+
+```{r}
+
+InfMorph = as.character(d.wals$X26A.Prefixing.vs..Suffixing.in.Inflectional.Morphology)
+
+d.wals$Aff = NA
+d.wals$Aff[InfMorph=="2 Strongly suffixing"] = 'Suff'
+d.wals$Aff[InfMorph=="3 Weakly suffixing"] = 'Suff'
+d.wals$Aff[InfMorph=="5 Weakly prefixing"] = 'Pre'
+d.wals$Aff[InfMorph=="6 Weakly prefixing"] = 'Pre'
+
+```
+
+Thompson (1998) predicts that interrogative affixes in v-final languages should be suffixes rather than prefixes.  Here are the raw numbers:
+
+```{r}
+pqInterMorph = d.wals$X116A.Polar.Questions=='2 Interrogative verb morphology'
+table(
+  d.wals[pqInterMorph,]$X26A.Prefixing.vs..Suffixing.in.Inflectional.Morphology,
+  d.wals[pqInterMorph,]$VerbPos)
+```
+
+Plot the raw numbers
+
+```{r}
+tx = table(
+  d.wals[pqInterMorph,]$Aff,
+  d.wals[pqInterMorph,]$VerbPos)
+
+barplot(
+  t(t(tx)/colSums(tx)),
+  names.arg=c("V-","-V-","-V"),
+  ylab="Proportion",
+  col=c("light green","dark green"))
+text(0.7,0.5,"Suffix",col="white")
+text(0.7,0.15,"Prefix")
+```
+
+\newpage
+
+# Mixed effects model
+
+A mixed effects model, predicing the presence of suffixing by the position of the verb, with a random effect for language family.
+
+```{r}
+# Null model, without fixed effect for verb pos.
+lm0 = glmer(
+  Aff=="Suff"~1+(1|family),
+  data=d.wals[!is.na(d.wals$VerbPos),],
+  family=binomial(link=logit))
+
+# Main model.
+lm1 = glmer(
+  Aff=="Suff"~factor(VerbPos)+(1|family),
+  data=d.wals[!is.na(d.wals$VerbPos),],
+  family=binomial(link=logit))
+```
+
+Compare fit of models.  Verb position is a significant predictor of the probability of suffixing verb morphology.
+
+```{r}
+suffTest = anova(lm0,lm1)
+suffTest
+```
+
+Look at model estimates.  Note that the strongest difference is between verb-initial and verb-final languages.
+
+```{r}
+summary(lm1)
+```
+
+Use fixed effects to estimate probability of suffixing morphology given verb position.
+
+```{r}
+est1 = c(fixef(lm1)[1],sum(fixef(lm1)[1:2]),sum(fixef(lm1)[c(1,3)]))
+tx2 = exp(est1)/(1+exp(est1))
+tx2
+```
+
+Plot the model estimates.
+
+```{r}
+
+barplot(
+  rbind(1-tx2,tx2),
+  names.arg=c("V-","-V-","-V"),
+  ylab="Proportion",
+  col=c("light green","dark green"))
+text(0.7,0.5,"Suffix",col="white")
+text(0.7,0.15,"Prefix")
+```
+
+
+# Comparison to other features
+
+Below we test whether the link between suffixing position and word order is stronger than the links between suffixing position and other linguistic variables in WALS.  We expect at least 95% of variables to exhibit a weaker link
+
+```{r allvall, cache=T, warning=F, message=F}
+
+res = data.frame(var='',chi='',df='',p='', n='', stringsAsFactors = F)
+
+for(i in 9:ncol(d.wals)){
+  
+  n = sum(!is.na(d.wals[,i]) & !is.na(d.wals$Aff))
+  if(n > 50){
+  
+  lmA0 =
+    tryCatch(
+      glmer(
+        Aff=="Suff"~1+(1|family),
+        data=d.wals[!is.na(d.wals[,i]) & !is.na(d.wals$Aff),],
+        family=binomial(link=logit)), 
+      error=function(e) NA,
+      warning=function(e) NA
+    )
+  
+  lmA1 =
+    tryCatch(
+        glmer(
+      Aff=="Suff"~
+        factor(d.wals[!is.na(d.wals[,i]) & !is.na(d.wals$Aff),i])+
+        (1|family),
+      data=d.wals[!is.na(d.wals[,i]) & !is.na(d.wals$Aff),],
+      family=binomial(link=logit)),
+      error=function(e) NA,
+      warning=function(e) NA
+    )
+  
+  if(!is.na(lmA1) & !is.na(lmA0)){
+    a = anova(lmA0,lmA1)
+    res = rbind(res, 
+                c(colnames(d.wals)[i],
+                  a$Chisq[2],
+                  a$`Chi Df`[2],
+                  a$`Pr(>Chisq)`[2]),
+                  n)
+  }
+  }
+}
+res$p = as.numeric(res$p)
+res$n = as.numeric(res$n)
+res = res[!is.na(res$p),]
+# Remove word order variables
+res = res[!grepl("Order.of", res$var),]
+write.csv(res,'SerendipityTest.csv')
+
+```
+
+The models converged for `r nrow(res)` variables.
+
+```{r}
+
+logp = log(res$p)
+suffAndWordOrder.p = log(suffTest$`Pr(>Chisq)`[2])
+
+hist(logp, xlim=c(min(min(logp),suffAndWordOrder.p),max(logp)+max(logp)*1.1 ))
+abline(v=suffAndWordOrder.p, col=2)
+```
+
+Proportion of tests with lower p-value:
+
+```{r}
+sum(logp <suffAndWordOrder.p) / length(logp)
+```
+
+List of variables with lower p-value:
+
+```{r}
+res[res$p < suffTest$`Pr(>Chisq)`[2], ]$var
+```
+
+This test concludes that the link between affix position and word order, as found in the sections above, is stronger than the vast majority of other possible links.
+
+# References
+
+
+Dryer, M. S. (2013a). Order of Subject, Object and Verb. Max Planck Institute for Evolutionary Anthropology, Leipzig. 
+
+Dryer, M. S. (2013b). Prefixing vs. Suffixing in Inflectional Morphology. Max Planck Institute for Evolutionary Anthropology, Leipzig. 
+
+Thompson, S. A. (1998). A discourse explanation for the cross-linguistic differences in the grammar of interrogation and negation. Case, typology and grammar: In honor of Barry J. Blake, 309-341.
+

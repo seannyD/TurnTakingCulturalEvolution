@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: TurnTakingCulturalEvolution.aux
+The style file: apalike.bst
+Database file #1: /Users/sgroberts/Documents/PhD/Biblography.bib
+Name 1 in "Kendrick, K. H., and Torreira, F." has a comma at the end for entry Kendrick_Torreira_2015
+while executing---line 1023 of file apalike.bst
+Name 1 in "Kendrick, K. H., and Torreira, F." has a comma at the end for entry Kendrick_Torreira_2015
+while executing---line 1023 of file apalike.bst
+Warning--can't use both author and editor fields in wals-81
+Warning--empty chapter and pages in wals-81
+Warning--can't use both author and editor fields in wals-92
+Warning--empty chapter and pages in wals-92
+Warning--can't use both author and editor fields in wals-26
+Warning--empty chapter and pages in wals-26
+Name 1 in "Kendrick, K. H., and Torreira, F." has a comma at the end for entry Kendrick_Torreira_2015
+while executing---line 1098 of file apalike.bst
+You've used 19 entries,
+            1935 wiz_defined-function locations,
+            592 strings with 6887 characters,
+and the built_in function-call counts, 7140 in all, are:
+= -- 684
+> -- 253
+< -- 18
++ -- 96
+- -- 82
+* -- 585
+:= -- 1244
+add.period$ -- 58
+call.type$ -- 19
+change.case$ -- 128
+chr.to.int$ -- 17
+cite$ -- 25
+duplicate$ -- 287
+empty$ -- 530
+format.name$ -- 107
+if$ -- 1395
+int.to.chr$ -- 3
+int.to.str$ -- 0
+missing$ -- 26
+newline$ -- 98
+num.names$ -- 59
+pop$ -- 128
+preamble$ -- 1
+purify$ -- 135
+quote$ -- 0
+skip$ -- 215
+stack$ -- 0
+substring$ -- 494
+swap$ -- 39
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 6
+while$ -- 59
+width$ -- 0
+write$ -- 246
+(There were 3 error messages)
