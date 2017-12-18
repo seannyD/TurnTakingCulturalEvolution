@@ -39,4 +39,4 @@ sentence_types = ["VSO","SVO","SOV","VSOX","SVOX","SOVX","XVSO","XSVO","XSOV"]
 The files `RunBigSweep.py` (and similar) show how to call the model to run through a sweep of parameter space.
 
 
-# TurnTakingCulturalEvolution
+Results of the sweeps are stored in `Results/`.  Note that the files `Results/BigSweep_OrderOfEmergence.tab` and `BigSweep_SentFinalParticle_OrderOfEmergence.tab` have been compressed to save space - they'll need to be decompressed to be used in the analysis scripts.
